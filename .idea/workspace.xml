@@ -26,11 +26,9 @@
       <file leaf-file-name="Question1.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assignment2/Question1.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="32" column="47" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
-              <folding>
-                <element signature="e#0#81#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="30">
+              <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -38,18 +36,18 @@
       <file leaf-file-name="Question2.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assignment2/Question2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+            <state relative-caret-position="30">
+              <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Question3.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Question3.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assignment2/Question3.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="98" column="20" selection-start-line="98" selection-start-column="20" selection-end-line="98" selection-end-column="20" />
+            <state relative-caret-position="30">
+              <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -75,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Question4.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Question4.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assignment2/Question4.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="29">
-              <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+              <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -103,11 +101,11 @@
         <option value="$PROJECT_DIR$/Question2.js" />
         <option value="$PROJECT_DIR$/Question3.js" />
         <option value="$PROJECT_DIR$/Question5.js" />
+        <option value="$PROJECT_DIR$/Assignment2/TestFile.html" />
+        <option value="$PROJECT_DIR$/Assignment2/Question1.js" />
         <option value="$PROJECT_DIR$/Assignment2/Question2.js" />
         <option value="$PROJECT_DIR$/Assignment2/Question3.js" />
         <option value="$PROJECT_DIR$/Assignment2/Question4.js" />
-        <option value="$PROJECT_DIR$/Assignment2/Question1.js" />
-        <option value="$PROJECT_DIR$/Assignment2/TestFile.html" />
       </list>
     </option>
   </component>
@@ -239,12 +237,12 @@
       <updated>1475101033964</updated>
       <workItem from="1475101035749" duration="30391000" />
       <workItem from="1476929845302" duration="14986000" />
-      <workItem from="1477075509510" duration="6347000" />
+      <workItem from="1477075509510" duration="6437000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51724000" />
+    <option name="totallyTimeSpent" value="51814000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="7" y="51" width="1212" height="737" extended-state="0" />
@@ -290,9 +288,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#81#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -421,14 +417,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assignment2/Question4.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assignment2/TestFile.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -437,28 +425,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assignment2/Question2.js">
+    <entry file="file://$PROJECT_DIR$/Assignment2/Question1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+        <state relative-caret-position="30">
+          <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assignment2/Question1.js">
+    <entry file="file://$PROJECT_DIR$/Assignment2/Question2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="32" column="47" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#81#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="30">
+          <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assignment2/Question3.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="98" column="20" selection-start-line="98" selection-start-column="20" selection-end-line="98" selection-end-column="20" />
+        <state relative-caret-position="30">
+          <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment2/Question4.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
           <folding />
         </state>
       </provider>

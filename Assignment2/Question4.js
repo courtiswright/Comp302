@@ -1,6 +1,6 @@
 /**
  * Created by courtneywright on 10/20/16.
- * Worked with Veronica Nasseem
+ * Worked with Veronica Nasseem, ID 260654054
  */
 
 function printAST(ast) {
