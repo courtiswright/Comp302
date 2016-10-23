@@ -1,0 +1,40 @@
+/**
+ * Created by courtneywright on 10/1/16.
+ */
+
+function cXXXr (operation) {
+
+    //return the function that gives the element based on the cXXXr input string, operation
+
+    //helper function to go through list
+    return function cXXXrHelper(list) {
+
+        //start from end of list (inner cdr/car operation if you write it by hand)
+        if (operation.charAt(operation.length - 1) == 'a') {
+
+            //if not the end of the list, call function recursively
+            //takes off last element of input operation string
+            //gets the car of the list that you want to go through
+            //calls cXXXrHelper recursively to continue operations on the now shorter list
+            if (operation.length == 1) {
+                return car(list);
+            } else {
+                operation = operation.slice(0, -1);
+                return cXXXrHelper(car(list));
+            }
+
+            // does the same thing as previous statement except calls cdr if last char of operation is a d
+        } else if (operation.charAt(operation.length - 1) == 'd') {
+
+            if (operation.length == 1) {
+                return car(list);
+            } else {
+                operation = operation.slice(0, -1);
+                return cXXXrHelper(cdr(list));
+            }
+
+        }
+
+    }
+
+}
