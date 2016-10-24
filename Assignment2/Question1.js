@@ -3,7 +3,16 @@
  * Worked with Veronica Nasseem, ID 260654054
  */
 
-// var TSTART = new RegExp();
+/**
+ * all regex was based off of MDN regex standard for javascript found online
+ */
+
+/**
+ * TSTART and TEND are the only two that have lookaheads
+ * this is becasue I check to see if there is a third bracket
+ * after the first two and only match if there is not, as to not
+ * confuse TSTART and PSTART, and TEND and PEND.
+ */
 var TSTART = /^{{(?!{)/;
 var TEND = /^}}(?!})/;
 var PIPE = /^\|/;
@@ -16,6 +25,7 @@ var PSTART = /^{{{/;
 var PEND = /^}}}/;
 var PNAME = /^[^(\||:})]*/;
 
+//object made of each token above to be assigned a value (true or false) that can be passed to scan
 var tokens = {
     TSTART: TSTART,
     DSTART: DSTART,
@@ -30,4 +40,4 @@ var tokens = {
     PNAME: PNAME
 };
 
-console.log("TSTART: " + TSTART.exec("{{abc"));
+// console.log("TSTART: " + TSTART.exec("{{abc"));

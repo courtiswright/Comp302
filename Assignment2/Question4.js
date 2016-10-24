@@ -3,70 +3,116 @@
  * Worked with Veronica Nasseem, ID 260654054
  */
 
+/**
+ * @param ast: gets tree from parse function (or can be passed directly in theory).
+ * @returns {*}
+ */
 function printAST(ast) {
+
+    //if there is no tree, return null
     if(!ast) {
         return "";
-    } else if(ast.name === "outer") {
-        var result;
+    }
+
+    /**
+     * otherwise, if we have matched <outer> while parsing, check which part of <outer> was matched to find text
+     * and call print function recursively to print definition that was matched.
+     */
+    else if(ast.name === "outer") {
+        var text;
         if(ast.OUTERTEXT != null) {
-            result = ast.OUTERTEXT;
+            text = ast.OUTERTEXT;
         } else if (ast.templateinvocation) {
-            result = printAST(ast.templateinvocation);
+            text = printAST(ast.templateinvocation);
         } else if (ast.templatedef) {
-            result = printAST(ast.templatedef);
+            text = printAST(ast.templatedef);
         } else {
             throw "malformed outer node";
         }
-        return result + printAST(ast.next);
-    } else if(ast.name === "templateinvocation") {
+        return text + printAST(ast.next);
+    }
+
+    /**
+     * otherwise, if we have matched <templateinvocation> while parsing, call print function recursively
+     * on <itext> and <targs>, where we know there is INNERTEXT, and surround that by TSTART and TEND.
+     */
+    else if(ast.name === "templateinvocation") {
         return "{{" + printAST(ast.itext) + printAST(ast.targs) + "}}";
-    } else if(ast.name === "targs") {
-        var result = "|" + printAST(ast.itext);
-        return result + printAST(ast.next);
-    } else if(ast.name === "itext") {
-        var result;
+    }
+
+    /**
+     * otherwise, if we have matched <targs> while parsing, call print function recursively on <itext>
+     * where we know there is INNERTEXT, and add a pipe to the beginning.
+     */
+    else if(ast.name === "targs") {
+        return "|" + printAST(ast.itext) + printAST(ast.next);
+    }
+
+    /**
+     * otherwise, if we have matched <itext> while parsing, check which part of <itext> was matched to find
+     * text and call print function recursively to print definition that was matched.
+     */
+    else if(ast.name === "itext") {
+        var text;
         if(ast.INNERTEXT != null) {
-            result = ast.INNERTEXT;
+            text = ast.INNERTEXT;
         } else if (ast.templateinvocation) {
-            result = printAST(ast.templateinvocation);
+            text = printAST(ast.templateinvocation);
         } else if (ast.templatedef) {
-            result = printAST(ast.templatedef);
+            text = printAST(ast.templatedef);
         } else if (ast.tparam) {
-            result = printAST(ast.tparam);
+            text = printAST(ast.tparam);
         } else {
             throw "malformed dtext node";
         }
-        return result + printAST(ast.next);
-    } else if(ast.name === "templatedef") {
-        var result = "{:";
+        return text + printAST(ast.next);
+    }
 
-        function extractdtext(ast.dtext) {
+    /**
+     * otherwise, if <templatedef> was matched while parsing, add DSTART to text. Then, check for <dtext
+     * and add string of PIPE + <dtext> as long as there are more, to text. Then, add DEND and return text.
+     */
+    else if(ast.name === "templatedef") {
+        var text = "{:";
+
+        function extractdtext(ast) {
             if(!ast.next) {
                 return printAST(ast);
             } else {
-                return printAST(ast.dtext) + "|" + extractdtext(ast.next);
+                return printAST(ast) + "|" + extractdtext(ast.next);
             }
         }
 
-        result += extractdtext(ast);
-        result += ":}";
-        return result;
+        text += extractdtext(ast.dtext);
+        text += ":}";
+        return text;
 
-    } else if(ast.name === "dtext") {
-        var result;
+    }
+
+    /**
+     * otherwise, if we have matched <dtext> while parsing, check which part of <dtext> was matched to find
+     * text and call print function recursively to print definition that was matched.
+     */
+    else if(ast.name === "dtext") {
+        var text;
         if(ast.INNERDTEXT != null) {
-            result = ast.INNERDTEXT;
+            text = ast.INNERDTEXT;
         } else if (ast.templateinvocation) {
-            result = printAST(ast.templateinvocation);
+            text = printAST(ast.templateinvocation);
         } else if (ast.templatedef) {
-            result = printAST(ast.templatedef);
+            text = printAST(ast.templatedef);
         } else if (ast.tparam) {
-            result = printAST(ast.tparam);
+            text = printAST(ast.tparam);
         } else {
             throw "malformed dtext node";
         }
-        return result + printAST(ast.next);
-    } else if(ast.name === "tparam") {
+        return text + printAST(ast.next);
+    }
+
+    /**
+     * otherwise, if <tparam> was matched while parsing, return PSTART, PNAME, and PEND.
+     */
+    else if(ast.name === "tparam") {
         return "{{{" + ast.PNAME + "}}}";
     }
 }
