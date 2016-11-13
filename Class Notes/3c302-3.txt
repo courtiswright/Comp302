@@ -1,0 +1,8 @@
+var f = 1, x = 4;
+switch(x)
+{
+	case 1: break;
+	case f+=11, 2: break;
+}
+f;
+//display gives 12

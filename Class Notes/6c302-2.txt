@@ -1,0 +1,5 @@
+function reverse(list)
+{
+	if (list == null) return null;
+	return append(   reverse(cdr(list)), cons(car(list), null)   );
+}

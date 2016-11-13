@@ -1,0 +1,10 @@
+function foo()
+{
+	var x = 1;
+	{
+		var x = 2;
+	}
+}
+//same x
+new scope when calling a function when using var
+when using let, it works as others would

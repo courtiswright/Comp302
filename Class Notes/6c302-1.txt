@@ -1,0 +1,30 @@
+Base case:
+if (list1 is null) append(list1, list2) = list2;
+
+Inductive case (list1 is not empty)
+list1 looks like (a 'rest')
+a + append('rest', list2)
+cons(a, append(rest, list2))
+
+
+
+function append(list1, list2)
+{
+	if (list1 == null) return list2;
+	return cons(car(list1), append(cdr(list1), list2));
+}
+
+We make a copy of list1 but not of list2. We stitch list1 onto list2. Can we use this observation to make another function, or even correct our append?
+Duplicate a list?
+
+function duplicate(list)
+{
+	return append(list, null);
+}
+
+Using the above, we can make a safeAppend function that copies both lists.
+
+function safeAppend(list1, list2)
+{
+	return append(list1, duplicate(list2));
+}

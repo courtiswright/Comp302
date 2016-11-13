@@ -1,0 +1,78 @@
+function cons(a, b)
+{
+	return
+	{
+		first : a, second : b
+	};
+}
+
+function car(list)
+{
+	return list.first;
+}
+
+function cdr(list)
+{
+	return list.second;
+}
+//All those are theory. Practice comes next.
+
+
+
+
+
+
+function cons(a,b)
+{
+	return function(selector)
+	{	
+		return selector(a, b); //selector is replaced by either car or cdr
+	}
+}
+
+function car(a, b)
+{
+	return a;
+}
+
+function cdr(a, b)
+{
+	return b;
+}
+
+cons("a", "b"); //returns the function as String
+(cons("a", "b"))(car); //returns a
+(cons("a", "b"))(cdr); //returns b
+
+
+
+
+
+//New Version
+
+function car(list)
+{
+	function carHelper(a, b)
+	{
+		return a;
+	}
+	return list(carHelper);
+}
+var list = cons("a", "b");
+car(list); //returns a
+
+function cdr(list)
+{
+	function cdrHelper(a, b)
+	{
+		return b;
+	}
+	return list(cdrHelper);
+}
+
+function nth(n, list)
+{
+	if (list == null) return null;
+	if (n == 0) return car(list);
+	return nth(n-1, cdr(list));
+}

@@ -1,0 +1,20 @@
+before : eval(AST) -> string
+now : eval(AST) -> string/string and closure/closure
+We will keep the idea of always returning strings. Then we need to convert our closure into a string, and when evaluating, vice-versa.
+
+{{ {:` | foo:} }} -> creating a closure, then evaluating it.
+
+{:` | foo:} returns a closure as string
+{{ ... }} converts back to a closure
+
+JSON.stringify(object/array/etc..) -> converts anything to string
+JSON.parse(string) -> converts it back to an object
+
+NB: stringify doesn't work with cyclic structures
+	E0:
+	foo: { params -> ..
+	       body ->
+               env -> E0
+             }
+Cyclic due to env pointing to E0.
+We will get to deal with this : envs have unique names..

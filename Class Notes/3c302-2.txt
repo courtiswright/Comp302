@@ -1,0 +1,27 @@
+var x = [];
+x[0] = 1;
+if (0 in x)
+{
+"yes";
+}
+else
+{
+"no";
+}
+
+//display gives yes (keys, not values)
+
+
+
+var x = [];
+x[0] = 1;
+if (10 in x)
+{
+"yes";
+}
+else
+{
+"no";
+}
+
+//display gives no

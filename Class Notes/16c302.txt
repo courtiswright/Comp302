@@ -1,0 +1,8 @@
+{: foo | ... :}
+foo -> not allowed
+
+Special syntax:
+{:`...:} -> single backquote indicates we want to return the closure.
+
+{:` | foo :} -> anonymous
+{:` foo | bar :} -> named

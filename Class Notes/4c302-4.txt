@@ -1,0 +1,9 @@
+function fac2(n)
+{
+	function helper(count, prod)
+	{
+		if (count == 0) return prod;
+		return helper(count - 1, prod * count);
+	}
+	return helper(n,1);
+}

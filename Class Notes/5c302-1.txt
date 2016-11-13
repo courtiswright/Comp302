@@ -1,0 +1,8 @@
+(let ((var 1 exp1)
+      (var 2 exp2)
+           .
+           .
+	   .
+          body))
+
+Assume var1 is exp1, and var2 is exp2, ..., in body

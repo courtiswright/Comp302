@@ -1,0 +1,18 @@
+<expr> ::= <term> | <expr> <addop> <term>
+<term> ::= <factor> | <term> <multop> <factor>
+<factor> ::= <id> | <number> | '(' <expr> ')'
+<addop> ::= '+' | '-'
+<multop> ::= '*' | '/'
+
+We have only one parse tree for our expression:
+
+<b*c+d>
+	<expr>
+		<expr> <addop> <term> //not a single term, so RHS of | in first rule
+			<expr> : <term>
+			<addop> '+'
+			<term> : <factor> : <id> : d
+				<term> : <term> <multop> <factor>
+					<term> : <factor> : id : b
+					<multop> : '*'
+					<factor> : id : c

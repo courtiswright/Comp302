@@ -1,0 +1,11 @@
+<args> ::= <id> <arglist>
+<arglist> ::= ',' id <arglist> | ';'
+
+"a,b,c;" --> id ',' id ',' id ';'
+
+The whole thing starts at
+<args>
+	<id> : a
+	<arglist> : ',', id : b, <arglist> //I have two arglist forms, one that starts with a comma and one with a semi-colon. Here that applies to the comma.
+		<arglist> : ',', id : c, <arglist>
+			<arglist> : ';'

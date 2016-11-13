@@ -1,0 +1,6 @@
+function show(list)
+{
+	if (list == null) return "()";
+	return "(" + car(list) + " " + show(cdr(list)) + ")";
+
+}

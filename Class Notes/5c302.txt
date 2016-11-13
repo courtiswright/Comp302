@@ -1,0 +1,46 @@
+function iterPattern(n, limit, base, combine, reduce)
+{
+	if (n == limit) return base;
+	return combine(n, iterPattern(reduce(n), limit, base, combine, reduce));
+}
+
+
+function fac4(n)
+{
+	return iterPattern(n, 0, 1, times, dec)
+}
+
+
+function fac5(n)
+{
+	return iterPattern(n, 0, 1, function(x, y) { return x * y; }, function(x) { return x - 1; });
+}
+//fac5(3) //display gives 6
+
+
+
+
+
+// f(x, y) = x(1+xy)^2 + y(1-y) + (1+xy)(1-y)
+function f(x,y)
+{
+	return x*(1+x*y)*x*(1+x*y) + y*(1-y) + (1+x*y)*(1-y);
+}
+
+function f(x,y)
+{
+	function fhelper(x, y, a, b)
+	{
+		return x*a*x*a + y*b + a*b;
+	}
+	return fhelper(x, y, 1+x*y, 1-y);
+} //can create a new version to avoid giving it a name
+
+function f(x,y)
+{
+	return (function (x, y, a, b)
+	{
+		return x*a*x*a + y*b + a*b;
+	})(x, y, 1+x*y, 1-y);
+} //still redundancy
+

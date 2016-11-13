@@ -1,0 +1,5 @@
+<stmt> ::= <balanced> | <unbalanced>
+<balanced> ::= if <condition> then <balanced> else <balanced>
+<unbalanced> ::= if <condition> then <stmt> | if <condition> then <balanced> else <unbalanced>
+
+Pushing the unbalanced part deeper and deeper. 

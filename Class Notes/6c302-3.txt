@@ -1,0 +1,21 @@
+function cons(a, b)
+{
+	return function(selector)
+	{
+		if (selector == "Are you a list?") return "Yes I am.";
+		return selector(a, b);
+	};
+}
+
+function isList(thing)
+{
+	if (typeof(thing) != 'function') return false;
+	try
+	{
+		if (thing("Are you a list?") == "Yes I am.") return true; 
+	}
+	catch (e)
+	{	
+	}
+	return false;
+}

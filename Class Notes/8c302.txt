@@ -1,0 +1,11 @@
+if (x)
+{
+	y = a+b
+}
+else
+{
+	z = c + d
+}
+
+environment chain
+

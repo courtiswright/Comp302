@@ -1,0 +1,5 @@
+foo();
+var foo = foo() { return 1; }
+
+//that will not work
+//trying to call an undefined variable

@@ -1,0 +1,16 @@
+function foo()
+{
+	var i;
+	j = 3;
+	{
+		var j;
+	}
+} //Though j is only declared inside the inner scope, this is still valid.
+
+function foo()
+{
+	let i;
+	{
+		let j;
+	}
+} //Here j doesn't exist outside of its specific inner scope. 

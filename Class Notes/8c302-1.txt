@@ -1,0 +1,9 @@
+var z = 1;
+function foo(a, b)
+{
+	var i;
+	c = a * 3;
+	return c;
+}
+
+foo(3 + 2, z)

@@ -1,0 +1,27 @@
+function scan(str, tokens) { … }
+{ token: __, value : __ }
+
+
+<program> ::= var id ';' | function id '(' <arglist> ')' '{' <statements> '}'
+To build the above, I need a function that recognizes all of these things.
+
+function parseProgram(str)
+{
+	var t = scan(str, {var, function});
+	switch (t.token)
+	{
+		case 'var' :
+			//parse a var declaration
+		case 'function' :
+			//parse a function declaration
+	}
+}
+
+Notic we need to move through the string.
+Some rules imply iteration (maybe my program contains multiple vardecls and fundecls). 
+
+Use recursion in our grammar to specify the iteration of these things.
+A vardecl or fundecl followed by a program.
+
+There is an extended BNF.
+foo ::= bar * | thing ?

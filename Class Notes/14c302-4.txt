@@ -1,0 +1,20 @@
+{{ #if | condition | then | else }}  //1
+{{ #ifeq | a | b | then | else }}    //2
+
+//1 : if (condition != "") then()
+      else else()
+
+//2 : if (a == b) then()
+      else else()
+
+
+
+{{ #if | condition | then | else }}
+eval if, then condition, then then, then else, then execute it. Do what it's supposed to do. 
+
+if (true) return 7;
+else do an infinite recursion;
+In Java, C, ..., this would work. It would return 7 and not pay attention to what is in the else.
+
+{{ #if | abc | 7 | {: foo | {{foo}} :} {{foo}} }}
+

@@ -1,0 +1,10 @@
+function square(x)
+{
+	retun x * x;
+}
+
+function makeSquares(list)
+{
+	if (list == null) return null;
+	return cons(   square(car(list)), makeSquares(cdr(list))   );
+}

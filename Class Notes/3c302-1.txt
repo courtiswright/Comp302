@@ -1,0 +1,40 @@
+if (undefined)
+{
+	"yes";
+}
+else
+{
+	"no";
+}
+//display gives no
+
+if (undefined == true)
+{
+	"yes";
+}
+else
+{
+	"no";
+}
+//display gives no
+
+if (undefined == false)
+{
+	"yes";
+}
+else
+{
+	"no";
+}
+//display gives no
+
+if (!undefined)
+{
+	"yes";
+}
+else
+{
+	"no";
+}
+//display gives yes
+

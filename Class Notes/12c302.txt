@@ -1,0 +1,3 @@
+{{foo | abc = some text}}
+
+Inside the page foo, we can refer to the argument by its name : {{{abc}}}

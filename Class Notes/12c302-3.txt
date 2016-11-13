@@ -1,0 +1,23 @@
+TSTART = "{{" //T for template
+TEND = "}}"
+PIPE = "|"
+OUTERTEXT = anything, but TSTART, DSTART
+INNERTEXT = anything, but TSTART, PIPE, TEND, DSTART
+DSTART = "{:"
+DEND = ":}"
+INNERDTEXT = anything but TSTART, DSTART, DEND, PIPE
+DNAME = anything, but PIPE
+PSTART = "{{{"
+PEND = "}}}"
+PNAME = anything, but PIPE, 
+
+<outer> ::= (OUTERTEXT | <templateinvocation> | <templatedef>)*
+<templateinvocation> ::= TSART <itext> <targs> TEND
+<targs> ::= (PIPE <itext>)*
+<itext> ::= (INNERTEXT | <templateinvocation> | <templatedef>)*
+
+<templatedef> ::= DSTART <dtext> <dparams> PIPE <dtext> DEND
+<dparams> ::= (PIPE DNAME)*
+<dtext> ::= (INNERDTEXT | <templateinvocation> | <templatedef>)*
+
+<tparam> ::= PSTART PNAME PEND

@@ -1,0 +1,58 @@
+{: hello | you | Hi there <b> {{{you}}} </b> :}
+{{ hello | rumpel }}
+
+Parse -> AST
+Root
+
+Definition
+Name : text("hello")
+Args : text("you")
+Body:
+	text : "Hi there <b>"
+	param : name : "you"
+	text : "</b>"
+
+Text : "\n"
+
+Invocation
+Name : text : "hello"
+Args : text : "rumpel"
+
+
+Evaluate it
+eval(root, env) (env is empty)
+
+See a definition
+eval(name, env) --> "hello"
+eval(param1, env) --> "you"
+in env, record this template
+{ 
+  name : "hello"
+  param : ["you"]
+  body : body AST node
+}
+return ""
+
+See a text node "\n", return "" + "\n"
+
+See an invocation
+eval name --> "hello"
+eval args --> ["rumpel"]
+Look up our template name
+	Find our definition of "hello"
+Create a new environment with param : arg bindinds. 
+{
+  you : rumpel
+}
+We need to think about what is the parent of this scope. In this case, the parent is the outer environment. 
+The above becomes our new environment.
+We can now invoke the body in our new environment. 
+eval(body, env') --> string 
+body in an AST.
+text : "Hello there <b>"
+param  : "you". Evaluating this : look up this name in the environment, env'. I find a binding for it. Return the value of the binding : "rumpel". 
+text : : "</b>"
+
+Return : "Hello there <b>rumpel</b>"
+
+FINAL RETURN : "" + "\n" + "Hello there <b>rumpel</b>"

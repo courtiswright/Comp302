@@ -1,0 +1,8 @@
+list: (a b c)
+cons(a, cons(b, cons(c, null)))
+car(list) = a
+cdr(list) = list (b c ())
+car(cdr(list)) = b
+car(cdr(cdr(list))) = c
+
+(null ? list) returns true if list is empty

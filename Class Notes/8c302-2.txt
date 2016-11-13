@@ -1,0 +1,5 @@
+foo();
+a = b + c;
+z = x * y;
+
+There is the call. After the call comes the continuation. 

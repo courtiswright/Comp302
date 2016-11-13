@@ -1,0 +1,27 @@
+"a=b+c"
+
+<assign_stnt> ::= id '=' <expression>
+<expr> ::= id | <expr> <op> <expr>
+<op> ::= + | - | * | /
+
+
+"a=b+c" id '=' id '+' id
+
+the above is identical to 
+<assign_stnt>
+	id '=' <expr>
+		id : 'a'
+		<expr> : <expr> <op> <expr>
+			<expr> : id
+			<op> : '+'
+			<expr> : id
+				id : 'b'
+				id : 'c'
+
+
+
+
+Can be more complex.
+Let's say on RHS I have "a=b*c+d"
+
+Divide the <expr> <op> <expr> in b*c  +  d  OR  b   *   c+d

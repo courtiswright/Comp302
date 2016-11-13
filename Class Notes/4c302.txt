@@ -1,0 +1,10 @@
+if (false)
+{
+	function foo()
+	{
+	...
+	}
+}
+foo() --> what happens?
+
+Should get an error.

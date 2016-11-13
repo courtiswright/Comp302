@@ -1,0 +1,13 @@
+{: count | start | stop |
+	{{ #ifeq | {{ #expr | {{{start}}} < {{{stop}}} }} | true | 
+		{{{start}}} {{ count | {{ #expr | {{{start}}} + 1 }} | 
+			{{{stop}}} }} | }} :}
+
+{{ count | 1 | 5 }} -> 1 2 3 4
+
+{: times | x | y | {{ #expr | {{{x}}} * {{{y}}} }} :}
+
+{: factorial | n | 
+	{{ #ifeq | {{{n}}} | 0 | 1 |
+		{{ times | {{{n}}} |
+			{{ factorial | {{ #expr | {{{n}}} - 1 }} }} }} :}

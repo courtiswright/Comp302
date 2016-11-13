@@ -1,0 +1,12 @@
+var x = 1;
+function foo()
+{
+	return x;
+}
+
+function bar (f)
+{
+	var x = 2;
+	return f();
+}
+bar foo();

@@ -1,0 +1,15 @@
+{: foo | {{{a}}} :}
+{: bar | a | {{foo}} :}
+{{ bar | hello }}
+
+With static scoping, this should not really work. a should not contain the string "hello"
+With dynamic scoping, it should work. 
+
+{: bar | a |
+	{: foo | {{{a}}} :}
+	{{foo}}
+:}
+
+{{ bar | hello }} -> "hello" with static scoping
+
+We will need to think about environment linking

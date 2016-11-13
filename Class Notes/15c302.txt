@@ -1,0 +1,16 @@
+var re = /hello/;
+
+"hello".match(re); //Display yields "hello"
+
+var re = /hello/;
+
+"helo".match(re); //Display yields null
+
+var re = /hello/;
+
+"hello".match(re)[0]; //Display yields "hello" (element that was matched)
+
+var re = /hello/;
+
+"helo".match(re)[0]; //Display yields error (can't have 0th element of null)
+

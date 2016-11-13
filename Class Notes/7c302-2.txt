@@ -1,0 +1,4 @@
+foo();
+function foo() { return 1; }
+
+//that will execute and return the value 1

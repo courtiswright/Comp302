@@ -1,0 +1,8 @@
+function show (list)
+{
+	var sval;
+	if (list == null) sval = "()";
+	else if (isList(list)) sval = "(" + show(car(list)) + " " + show(cdr(list)) + ")";
+	else sval = list;
+	return sval; 
+}

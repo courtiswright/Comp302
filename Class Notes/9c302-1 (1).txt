@@ -1,0 +1,20 @@
+function scan(str)
+{
+	if (str.match(/.../))
+		corresponding token
+	else if (str.match(/.../))
+		different token
+	etc
+}
+
+var T_ID = "id";
+var T_NUM = "num";
+var T_SC = ";';
+.
+.
+.
+
+if (value === str.match(/^var/))
+	return { token : T_VAR, value : 'var');
+else if (value === str.match(/^[a-zA-Z_]...))
+	return { token : T_ID, value : value[0]};

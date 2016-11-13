@@ -1,0 +1,9 @@
+{{#if : - | then-part | else-part}}
+
+This means that if the condition is true, return the then-part, otherwise return the else-part.
+"true" -> non-empty string, ignoring leading and trailing spaces. 
+
+{{#ifeq : - | - | then-part | else-part}}
+Are the two strings equal, again ignoring spaces.
+
+{{#expr : -}} with an arbitrary express in there

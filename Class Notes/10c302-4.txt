@@ -1,0 +1,4 @@
+<args> ::= id <arglist> | "epsilon"
+<arglist> ::= <arglist> ',' id | "epsilon"
+
+I cannot use LL (1) with this, due to the left-recursion

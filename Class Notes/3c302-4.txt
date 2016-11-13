@@ -1,0 +1,10 @@
+function doubler(x)
+{
+	return x + x;
+}
+
+doubler(7);
+//display gives 14
+
+doubler("foo");
+//display foofoo

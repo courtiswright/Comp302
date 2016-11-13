@@ -1,0 +1,20 @@
+function <name> (a)
+{
+	if (n == <limit>) return <base_value>
+	return  <combine> (n, <name> (<reduce> (n)));
+}
+
+
+
+function iterPattern(n, limit, base, combine, reduce)
+{
+	if (n == limit) return base;
+	return combine(n, iterPattern(reduce(n), limit, base, combine, reduce));
+} //General form for prefixSum and fac
+
+
+
+function fac4(n)
+{
+	return iterPattern(n, 0, 1, times, dec);
+}

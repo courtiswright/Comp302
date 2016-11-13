@@ -1,0 +1,4 @@
+{: foo | {{{a}}} :}
+{: bar | a | {{foo}} :}
+
+{{bar | hello}} //foo is not declared in bar

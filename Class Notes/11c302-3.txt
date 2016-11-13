@@ -1,0 +1,16 @@
+Template --> foo
+
+I have another page where I want to include the contents of foo.
+To transclude this:
+	{{foo}} --> get the content of foo and replace this with it.
+
+But more complex
+	{{foo|arg1|arg2|arg...}} We can think of this as calling foo with args. 
+
+Inside foo, we have access to the arguments as positional parameters
+	{{{1}}} -> replaced by arg1 inside foo
+	{{{2}}} -> replaced by arg2 inside foo
+
+e.g. Identity with {{{1}}} inside.
+
+{{Identity|xyz}} -> "xyz

@@ -1,0 +1,13 @@
+function foo()
+{
+	return x;
+}
+
+function bar()
+{
+	var x = 1;
+	foo();
+}
+
+In static, this is not correct.
+In dynamic, it is.

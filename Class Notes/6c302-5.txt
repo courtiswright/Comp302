@@ -1,0 +1,10 @@
+function map(procedure, list)
+{
+	if (list == null) return null;
+	return cons(   procedure(car(list)), map(procedure, cdr(list))   );
+} //This is the general form of all the functions we saw above.
+
+function makeSquares(list)
+{
+	return map(square, list);
+}

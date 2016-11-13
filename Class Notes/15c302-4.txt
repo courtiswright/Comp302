@@ -1,0 +1,5 @@
+{: bar | a |
+	{: foo | {{{aa}}} :}
+		foo
+:}
+Just the string name, not the closure (no environment). 

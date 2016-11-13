@@ -1,0 +1,8 @@
+var x = [];
+x[0] = "hello";
+x[0]; //display gives hello
+x[13]; //display gives undefined
+x[13] = 5;
+x[13]; //display gives 5
+x.length; //display gives 14
+x[7]; //display gives undefined

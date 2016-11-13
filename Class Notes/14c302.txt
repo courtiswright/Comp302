@@ -1,0 +1,6 @@
+{: say | x | Hi {{{x}}} :}                                   //1
+{: says | x | y | {{{x}}} says "{{ say | {{{y}}} }}" :}      //2
+
+{{ says | I | you }} -> I says "Hi you"                      //3
+
+If we try 3 before 1 (or 2), we would not find the correct binding and would have a problem.

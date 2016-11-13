@@ -1,0 +1,7 @@
+int x;
+function foo()
+{
+	int y;
+	x+y; //not a problem
+}
+y; //problem

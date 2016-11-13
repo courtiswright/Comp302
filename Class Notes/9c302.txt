@@ -1,0 +1,17 @@
+var f = 1;
+for (var i = 0; i < 10; i++)
+{
+	f *= 1;
+}
+
+
+VAR = var;
+WS = whitespace;
+ID = identifier;
+EQ = equality;
+NUM = number;
+SC = semi-colon;
+LB = left bracket
+.
+.
+.

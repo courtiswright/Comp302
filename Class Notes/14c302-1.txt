@@ -1,0 +1,4 @@
+{: getfunc | f | {{{f}}} :}
+{{ getfunc | say }}
+
+{{ {{ getfunc | say }} | there }} -> Hi there

@@ -1,0 +1,23 @@
+/**
+ * Created by courtneywright on 11/10/16.
+ */
+
+{:succ|
+:}
+
+{:isZero| CHURCH
+         |
+:}
+
+{:plus|
+:}
+
+{:cond|x
+      |{{#ifeq|{{x}}|-1||!}}:}
+
+{:update|x
+        |{{#expr|{{{x}}}-1}}:}
+
+{: makeN|n
+        |{{#if|{{ {{{cond}}}|{{{n}}} }}
+        |{{    }}{{makeN|{{ {{{update}}}|{{{n}}} }} }}:}

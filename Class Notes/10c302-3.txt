@@ -1,0 +1,30 @@
+a,b,c;
+
+;
+c
+,
+b
+,
+a
+
+
+This is a stack so the ';' is the last thing pushed on. As soon as I found the ';', I find a rule that has only one match. Therefore, I can reduce:
+<arglist> : ';'
+c
+,
+b
+,
+a
+
+Reduce again: ',' id <arglist> reduced to arglist
+<arglist> : ,c;
+b
+,
+a
+
+Reduce again: ',' id <arglist> reduced to arglist
+<arglist> : ,b,c;
+a
+
+Reduce again: id <arglist> reduces to <args<
+<args>

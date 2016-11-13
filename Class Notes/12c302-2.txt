@@ -1,0 +1,3 @@
+{:template name | paramName1 | paramName2... | body:}
+e.g
+{: identity | x | {{{x}}} :}

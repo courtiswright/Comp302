@@ -1,0 +1,12 @@
+function foo(a)
+{
+	var x;
+	.
+	.
+	.
+}  //x is alive within {}, so is a. 
+x = 1;
+.
+.
+x = 2;
+We have rebound. Therefore two lifetimes. 

@@ -1,0 +1,38 @@
+function plus(a,b)
+{
+	return a+b;
+}
+function minus(a,b)
+{
+	return a-b;
+}
+function times(a,b)
+{
+	return a*b;
+}
+function decrement(a)
+{
+	return minus(a,1);
+}
+function square(a)
+{
+	return times(a,a);
+}
+function sumofsquares(x,y)
+{
+	return plus(square(x), square(y));
+}
+
+//0++++...+n
+
+function prefixSum(n)
+{
+	if (n == 0) return 0;
+	return prefixSum(n - 1) + n;
+}
+
+function fac(n)
+{
+	if (n == 0) return 1;
+	return fac(n - 1) * n;
+}
