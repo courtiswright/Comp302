@@ -12,7 +12,7 @@ function createEnv(parent) {
 }
 
 function lookup(name, env) {
-    if (env.bindings[name]) {
+    if (env.bindings[name] !== null && env.bindings[name] !== undefined) {
         return env.bindings[name];
     } else if(env.parent){
         return lookup(name, env.parent);
