@@ -2,22 +2,53 @@
  * Created by courtneywright on 11/10/16.
  */
 
-{:succ|
-:}
+{:incr|x
+      |{{#expr|{{{x}}}+1}}:}
 
-{:isZero| CHURCH
-         |
-:}
+{:decr|x
+      |{{#expr|{{{x}}}-1}}:}
 
-{:plus|
-:}
+{:isZero|church
+        |{{#ifeq|{{evalChurch|church|0}}|0|!||}}:}
 
-{:cond|x
-      |{{#ifeq|{{x}}|-1||!}}:}
+//counter must be initialized at 0
+{:succ|n
+      |counter
+      |{{#ifeq|{{{n}}}|{{{counter}}}
+                      |{{{ {:‘|x:} }}}
+                      |{{ {:‘|{{succ|n|{{incr|counter}} }}:} }}
 
-{:update|x
-        |{{#expr|{{{x}}}-1}}:}
+//counter must be initialized at 0
+{:evalChurch|church
+            |counter
+            |{:innerChurch|{{church}}:}{{#ifeq|{{{innerChurch}}}|{{{x}}}
+                                                                |{{{counter}}}
+                                                                |{{evalChurch|innerChurch
+                                                                                 |{{incr|{{{counter}}} }} }}:}
 
-{: makeN|n
-        |{{#if|{{ {{{cond}}}|{{{n}}} }}
-        |{{    }}{{makeN|{{ {{{update}}}|{{{n}}} }} }}:}
+//not complete but not used in call prefix sum calculation
+//{:plus|i
+//      |n
+//      |m
+//      |counterN
+//      |counterM
+//      |{{#ifeq|{{{n}}}|{{{counterN}}}
+//                      |}}:}
+
+{:makeN|n
+       |{{#ifeq|{{{n}}}|0
+                       |{{{x}}}
+                       |{{ {:‘|{{makeN|{{decr|{{{n}}} }} }}:} }}:}
+
+//j and prefSum must be initialized at 0
+{:computePrefix|church
+               |j
+               |prefSum
+               |{{#ifeq|{{evalChurch|church|0}}|{{{j}}}
+                                               |{{#expr|{{{prefSum}}}+j}}
+                                               |{{computePrefix|church
+                                                                   |{{incr|{{{j}}} }}
+                                                                   |{{#expr|{{{prefSum}}}+j}} }}:}
+
+//example of call
+//{{computePrefix|{{makeN|4}}|0|0}}

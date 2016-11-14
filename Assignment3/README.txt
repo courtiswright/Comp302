@@ -1,0 +1,1 @@
+Questions 2,3,4 are all in the file named "Question234.js". This is because it was necessary to use Q2 in order to implement Q3 and then again to implement Q4. This file can be tested for functionality of all the Question numbers (2,3,4) and should work. Thanks.
